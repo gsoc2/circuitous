@@ -49,6 +49,6 @@ if ! grep -q "readmemb(.*$tv_circuit.*test_vectors" $tb_circuit; then
     exit 1
 fi
 
-ruby external/iverilog $tb_circuit $verilog_circuit
+iverilog $tb_circuit $verilog_circuit
 ruby external/run-tests $root_name.tb.vpp
 exit $?
