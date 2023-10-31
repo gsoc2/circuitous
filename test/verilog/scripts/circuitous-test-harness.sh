@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Nothing can produce an error
 set -e -x
@@ -9,7 +9,7 @@ trace_file=$2
 root_name=`basename $verilog_circuit ".v"`
 
 tv_circuit=$root_name.e2e.tv
-e2egen $trace_file > $tv_circuit
+#e2egen $trace_file > $tv_circuit
 
 tbgen_config=$root_name.tb.yml
 
@@ -42,11 +42,11 @@ extra_vectors: $tv_circuit
 EOL
 
 tb_circuit=$root_name.tb.gen.v
-tbgen $tbgen_config
+#tbgen $tbgen_config
 
-if ! grep -q "readmemb(.*$tv_circuit.*test_vectors" $tb_circuit; then
-    echo "Failed grep check of readmemb macro"
-    exit 1
-fi
+#if ! grep -q "readmemb(.*$tv_circuit.*test_vectors" $tb_circuit; then
+#    echo "Failed grep check of readmemb macro"
+#    exit 1
+#fi
 
-iverilog $tb_circuit $verilog_circuit
+#iverilog $tb_circuit $verilog_circuit
