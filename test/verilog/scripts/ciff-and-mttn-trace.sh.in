@@ -42,3 +42,4 @@ else
 fi
 
 sh scripts/circuitous-test-harness.sh $circuit_v $trace_out
+exit $?
