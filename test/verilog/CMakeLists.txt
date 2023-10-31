@@ -8,6 +8,7 @@ configure_file( scripts/ciff-and-mttn-trace.sh.in scripts/ciff-and-mttn-trace.sh
 configure_file( scripts/from-mttn-trace.sh.in scripts/from-mttn-trace.sh @ONLY )
 
 file( COPY scripts DESTINATION . )
+file( COPY external DESTINATION . )
 file( COPY input_mttn_traces DESTINATION . )
 file( COPY run.sh DESTINATION . )
 
