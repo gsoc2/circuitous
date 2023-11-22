@@ -44,6 +44,8 @@ EOL
 tb_circuit=$root_name.tb.gen.v
 ruby external/tbgen $tbgen_config
 
+ls
+
 if ! grep -q "readmemb(.*$tv_circuit.*test_vectors" $tb_circuit; then
     echo "Failed grep check of readmemb macro"
     exit 1
